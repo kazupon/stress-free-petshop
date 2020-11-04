@@ -1,6 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import makeRouter from './router'
+import makeStore from './store'
+import makeI18n from './plugins/i18n'
 
-createApp(App).use(store).use(router).mount('#app')
+import createServer from '../api/server' // Miragejs mock server
+createServer()
+
+createApp(App)
+  .use(makeStore())
+  .use(makeRouter())
+  .use(makeI18n())
+  .mount('#app')

@@ -1,7 +1,6 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <TheNavbar/>
   </div>
   <router-view/>
 </template>
@@ -17,7 +16,6 @@
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
@@ -28,3 +26,9 @@
   }
 }
 </style>
+<script>
+import TheNavbar from '@/components/TheNavbar'
+export default {
+  components: {TheNavbar}
+}
+</script>

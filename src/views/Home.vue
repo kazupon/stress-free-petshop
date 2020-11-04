@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ProductGrid style="width: 60vw;" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ProductGrid from '@/components/ProductGrid'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
-  }
+    ProductGrid,
+  },
 }
 </script>
+
+<style scoped>
+.home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+</style>
