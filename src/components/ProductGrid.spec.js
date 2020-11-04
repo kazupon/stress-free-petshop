@@ -16,6 +16,10 @@ describe('ProductGrid', () => {
     expect(wrapper.exists()).toBeTruthy()
   })
 
+  it('formats the product price properly using i18n', async () => {
+
+  })
+
   it('renders the product details', async () => {
     axios.get.mockResolvedValue({data: {products}});
 

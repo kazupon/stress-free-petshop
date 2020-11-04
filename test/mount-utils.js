@@ -15,17 +15,14 @@ export function mount(component, options = {}) {
   return vtuMount(component, options)
 }
 
-export async function mountWithRouter(component, options = {}) {
-  options.global = options.global || {}
-  let plugins = []
-  if (Array.isArray(options.global.plugins)) {
-    plugins = options.global.plugins
-  } else {
-    const router = makeRouter()
-    await router.push('/')
-    await router.isReady()
-    plugins = defaultPlugins(router)
+export function makeVuexStoreComponent(options = makeStore()) {
+  return vtuMount({
+    render(h) { return h('div', '') }, // <div/>
+  },
+  {
+    globals: {
+      plugins: [options]
+    }
   }
-  options.global.plugins = plugins
-  return vtuMount(component, options)
+  )
 }

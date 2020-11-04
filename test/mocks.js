@@ -5,4 +5,3 @@ export const products = [
   { name: 'Cat Food', id: 3, price: 2.00, currency: 'USD' },
   { name: 'Cat Bed', id: 4, price: 25.00, currency: 'USD'},
 ]
-

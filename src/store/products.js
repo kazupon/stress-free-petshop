@@ -6,6 +6,10 @@ export default {
       products: []
     }
   },
+  getters: {
+    // filters products by endsWithLetter 'milk' // 'k'
+    getProductThatEndsInLetter: (state, getters, rootState, rootGetter) => {}
+  },
   actions: {
     async getProduct({ state, dispatch }, id) {
 
